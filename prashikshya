@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #fff0f5, #ffffff);
+    color: #333;
+    text-align: center;
+}
+
+header {
+    padding: 80px 20px;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+section {
+    padding: 40px 20px;
+}
+
+.card {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    padding: 20px;
+    background: #ffdde1;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>You Are My Peace, My Happiness, My Everything ❤️</h1>
+    <p>Since you came into my life, everything feels complete and beautiful.</p>
+</header>
+
+<section>
+    <div class="card">
+        <h2>About You 💖</h2>
+        <p>You are my strength when I feel weak.</p>
+        <p>You bring calmness to my chaos.</p>
+        <p>Your smile makes my worst days better.</p>
+        <p>You are not just my wife, you are my best friend and my home.</p>
+    </div>
+</section>
+
+<section>
+    <div class="card">
+        <h2>Our Love Story ❤️</h2>
+        <p>Our beautiful journey became even more special on</p>
+        <h3>Mangsir 8, 2081</h3>
+        <p>The day we promised to walk together forever.</p>
+        <p>Every moment with you has been full of love, warmth, and happiness.</p>
+    </div>
+</section>
+
+<section>
+    <div class="card">
+        <h2>Why You Are So Special 🌹</h2>
+        <p>You support me unconditionally.</p>
+        <p>You understand me without words.</p>
+        <p>You stand beside me in every situation.</p>
+        <p>You make ordinary days feel magical.</p>
+    </div>
+</section>
+
+<section>
+    <div class="card">
+        <h2>A Message From Me 💌</h2>
+        <p>I just want to say thank you for being in my life.</p>
+        <p>Everything feels right when you are around.</p>
+        <p>Life without you feels incomplete.</p>
+        <p>I promise to always stand beside you, no matter what.</p>
+        <p>I love you more than words can ever express ❤️</p>
+    </div>
+</section>
+
+<section>
+    <div class="card gallery">
+        <h2>Our Memories 📸</h2>
+        <p>(Add your photos here)</p>
+        <img src="https://via.placeholder.com/200" />
+        <img src="https://via.placeholder.com/200" />
+        <img src="https://via.placeholder.com/200" />
+    </div>
+</section>
+
+<footer>
+    Forever isn’t enough with you ❤️
+</footer>
+
+</body>
+</html>
