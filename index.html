@@ -10,7 +10,6 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(to bottom, #fff0f5, #ffffff);
-    color: #333;
     text-align: center;
     overflow-x: hidden;
 }
@@ -23,39 +22,63 @@ body {
     animation: floatUp 6s linear infinite;
     color: red;
 }
-
 @keyframes floatUp {
     0% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(-100vh); opacity: 0; }
 }
 
+/* Header */
 header {
     padding: 80px 20px;
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
     color: white;
 }
 
-h1 span {
-    border-right: 3px solid white;
-    padding-right: 5px;
-}
-
-section {
-    padding: 40px 20px;
-}
-
+/* Cards */
 .card {
     max-width: 700px;
-    margin: auto;
+    margin: 30px auto;
     padding: 20px;
-    background: #fff;
+    background: white;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+/* Slideshow */
+.slideshow img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Popup */
+#popup {
+    display: none;
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.7);
+}
+#popupContent {
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    max-width:400px;
+    margin:100px auto;
+}
+
+/* Button */
+button {
+    padding:10px 20px;
+    border:none;
+    background:#ff758c;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+}
+
 footer {
     padding: 20px;
-    background: #ffdde1;
+    background: #ffd1dc;
     font-weight: bold;
 }
 </style>
@@ -63,77 +86,100 @@ footer {
 
 <body>
 
-<!-- 🎵 Background Music -->
+<!-- 🎵 Music -->
 <audio autoplay loop>
   <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
 </audio>
 
 <header>
     <h1>You Are My <span id="typing"></span> ❤️</h1>
-    <p>Since you came into my life, everything feels complete and beautiful.</p>
+    <p>तिमी आयौ र मेरो जीवन पूर्ण भयो ❤️</p>
 </header>
 
-<section>
-    <div class="card">
-        <h2>About You 💖</h2>
-        <p>You are my strength when I feel weak.</p>
-        <p>You bring calmness to my chaos.</p>
-        <p>Your smile makes my worst days better.</p>
-        <p>You are my best friend and my home.</p>
-    </div>
-</section>
+<div class="card">
+    <h2>About You 💖</h2>
+    <p>You are my strength when I feel weak.</p>
+    <p>तिमी मेरो शान्ति हौ जब मेरो मन अशान्त हुन्छ।</p>
+    <p>Your smile makes everything better 😊</p>
+</div>
 
-<section>
-    <div class="card">
-        <h2>Our Love Story ❤️</h2>
-        <h3>Mangsir 8, 2081</h3>
-        <p>The day we promised forever.</p>
-        <p>Every moment with you is a blessing.</p>
-    </div>
-</section>
+<div class="card">
+    <h2>Our Love Story ❤️</h2>
+    <h3>Mangsir 8, 2081</h3>
+    <p>That day changed my life forever.</p>
+    <p>त्यो दिनदेखि मेरो जीवन अझ सुन्दर भयो।</p>
+</div>
 
-<section>
-    <div class="card">
-        <h2>A Message From Me 💌</h2>
-        <p>Everything feels right when you are around.</p>
-        <p>Life without you feels incomplete.</p>
-        <p>I will always stand beside you ❤️</p>
-    </div>
-</section>
+<!-- 📸 Slideshow -->
+<div class="card slideshow">
+    <h2>Our Memories 📸</h2>
+    <img id="slide" src="https://via.placeholder.com/600x400">
+</div>
+
+<div class="card">
+    <h2>Message 💌</h2>
+    <p>Everything feels right when you are around.</p>
+    <p>तिमी बिना मेरो जीवन अधुरो छ।</p>
+    <button onclick="showPopup()">Click for Surprise ❤️</button>
+</div>
 
 <footer>
     Forever isn’t enough with you ❤️
 </footer>
 
-<script>
-// ✨ Typing Effect (PUT HER NAME HERE)
-const text = "PRASHIKSHYA ❤️"; // <-- CHANGE THIS TO HER NAME
-let index = 0;
+<!-- 💌 Popup -->
+<div id="popup">
+    <div id="popupContent">
+        <h2>My Love ❤️</h2>
+        <p>I am always with you, no matter what.</p>
+        <p>म सधैं तिम्रो साथमा छु ❤️</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
 
-function typeEffect() {
-    if (index < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, 100);
+<script>
+// ✨ Typing Effect
+const text = "PRASHIKSHYA ❤️"; // CHANGE NAME
+let i = 0;
+function typing() {
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 100);
     }
 }
-typeEffect();
+typing();
 
-// 💕 Floating Hearts Generator
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
+// 💕 Hearts
+function createHeart(){
+    let h = document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"vw";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
 }
+setInterval(createHeart,300);
 
-setInterval(createHeart, 300);
+// 📸 Slideshow (ADD YOUR PHOTOS)
+const images = [
+    "https://via.placeholder.com/600x400",
+    "https://via.placeholder.com/600x400",
+    "https://via.placeholder.com/600x400"
+];
+let index=0;
+setInterval(()=>{
+    index=(index+1)%images.length;
+    document.getElementById("slide").src=images[index];
+},3000);
+
+// 💌 Popup
+function showPopup(){
+    document.getElementById("popup").style.display="block";
+}
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
 </script>
 
 </body>
